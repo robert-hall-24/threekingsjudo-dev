@@ -1,27 +1,36 @@
-<div class="min-h-screen flex flex-col p-8 sm:p-16 md:p-24 justify-center bg-white">
-  <!-- Themes: blue, purple and teal -->
-  <div data-theme="teal" class="mx-auto max-w-6xl">
-    <h2 class="sr-only">Featured case study</h2>
-    <section class="font-sans text-black">
-      <div class="[ lg:flex lg:items-center ] [ fancy-corners fancy-corners--large fancy-corners--top-left fancy-corners--bottom-right ]">
-        <div class="flex-shrink-0 self-stretch sm:flex-basis-40 md:flex-basis-50 xl:flex-basis-60">
-          <div class="h-full">
-            <article class="h-full">
-              <div class="h-full">
-                <img class="h-full object-cover" src="https://scontent.fakl2-1.fna.fbcdn.net/v/t51.75761-15/462808761_18028991354371311_8181220695166500387_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=6vQ3_7Ufmc4Q7kNvgH2FA1M&_nc_zt=23&_nc_ht=scontent.fakl2-1.fna&_nc_gid=AMnJJ-tncOxh3xvjt7DQ30i&oh=00_AYCaeJ2E2sXh2PB1ReVGfhBvDxcwA7OlsLdweWJjHPyLFA&oe=675151B5" width="733" height="412" alt='""' typeof="foaf:Image" />
-              </div>
-            </article>
-          </div>
+<!-- Add Tailwind animation -->
+<section class="py-24 relative overflow-hidden">
+  <div class="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto animate-fade-in">
+    <div class="w-full justify-start items-center gap-12 grid lg:grid-cols-2 grid-cols-1">
+      <!-- Left images with slide-in effect -->
+      <div
+        class="w-full justify-center items-start gap-6 grid sm:grid-cols-2 grid-cols-1 lg:order-first order-last">
+        <div
+          class="pt-24 lg:justify-center sm:justify-end justify-start items-start gap-2.5 flex animate-slide-in-left">
+          <img class="rounded-xl object-cover" src="https://scontent.fakl2-1.fna.fbcdn.net/v/t39.30808-6/294285657_416614677090868_1089399152346454117_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=3a1ebe&_nc_ohc=HcH8dycDJCIQ7kNvgHuyfD_&_nc_zt=23&_nc_ht=scontent.fakl2-1.fna&_nc_gid=AFL7kJytSi8ILSoULRVz2kp&oh=00_AYAqIVAVuxluMqsgPgVDVVVxjfkUKHoAwggCQBIMiPnz9w&oe=6777F254"
+            alt="about Us image" />
         </div>
-        <div class="p-6 bg-grey">
-          <div class="leading-relaxed">
-            <h2 class="leading-tight text-4xl font-bold">Welcome to ThreeKingsJudo!</h2>
-            <p class="mt-4">Our second CXcon in October was dedicated to experience transformation. The free one-day virtual event&nbsp;brought together 230+ heads of digital, thought leaders, and UX practitioners to discuss all aspects of experience design..</p>
-            <p class="mt-4">In a jam-packed day filled with keynote sessions, panels, and virtual networking we explored topics including design leadership, UX ethics, designing for emotion and innovation at scale.</p>
-            <p><a class="mt-4 button button--secondary" href="https://inviqa.com/cxcon-experience-transformation">Explore this event</a></p>
-          </div>
-        </div>
+        <img class="sm:ml-0 ml-auto rounded-xl object-cover animate-slide-in-right"
+          src="https://scontent.fakl2-1.fna.fbcdn.net/v/t39.30808-6/358065246_643045004512353_6392143697260148940_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=zeNOEoJJ2SgQ7kNvgHTDH6r&_nc_zt=23&_nc_ht=scontent.fakl2-1.fna&_nc_gid=A9kdINiznfq50IJlAEPe5sS&oh=00_AYABkVnADtt3t5P5aLW0SWDDyq-fXhbFCeX6YENpnk0EVQ&oe=6777FE69"
+          alt="about Us image" />
       </div>
-    </section>
+      <!-- Text with fade-in -->
+      <div class="w-full flex-col justify-center lg:items-start items-center gap-10 inline-flex">
+        <div class="w-full flex-col justify-center items-start gap-8 flex animate-fade-in">
+          <div class="w-full flex-col justify-start lg:items-start items-center gap-3 flex">
+            <h2
+              class="text-gray-900 text-4xl font-bold font-manrope leading-normal lg:text-start text-center">
+              Welcome to ThreeKingsJudo</h2>
+            <p class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
+              We’re thrilled to have you join our community of judo enthusiasts. Whether you’re a beginner eager to learn the fundamentals or an experienced judoka striving to refine your skills, our club offers something for everyone.</p>
+          </div>
+        </div>
+        <button
+          class="sm:w-fit w-full px-3.5 py-2 bg-logo-color hover:bg-dark-color-logo transition-all duration-700 ease-in-out rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] justify-center items-center flex">
+          <span class="px-1.5 text-white text-sm font-medium leading-6">Read More</span>
+        </button>
+      </div>
+    </div>
   </div>
-</div>
+</section>
+                       
