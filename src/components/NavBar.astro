@@ -1,8 +1,50 @@
+---
+import client from '../contentfulClient.js';
+
+// Fetch the NavBar entry and resolve the logo asset
+const response = await client.getEntries({ content_type: 'navBar', limit: 1, include: 2 });
+const navBar = response.items[0];
+let logoUrl = 'testlogo2.png';
+if (
+  navBar?.fields?.logo &&
+  typeof navBar.fields.logo === 'object' &&
+  'fields' in navBar.fields.logo &&
+  typeof navBar.fields.logo.fields === 'object' &&
+  navBar.fields.logo.fields !== null &&
+  'file' in navBar.fields.logo.fields &&
+  typeof navBar.fields.logo.fields.file === 'object' &&
+  navBar.fields.logo.fields.file !== null &&
+  'url' in navBar.fields.logo.fields.file &&
+  typeof navBar.fields.logo.fields.file.url === 'string'
+) {
+  logoUrl = 'https:' + navBar.fields.logo.fields.file.url;
+} else if (
+  navBar?.fields?.logo &&
+  typeof navBar.fields.logo === 'object' &&
+  'sys' in navBar.fields.logo &&
+  response.includes?.Asset
+) {
+  // Fallback: resolve asset from includes if not auto-resolved
+  let logoId = null;
+  if (
+    navBar.fields.logo.sys &&
+    typeof navBar.fields.logo.sys === 'object' &&
+    'id' in navBar.fields.logo.sys &&
+    typeof navBar.fields.logo.sys.id === 'string'
+  ) {
+    logoId = navBar.fields.logo.sys.id;
+  }
+  const asset = logoId ? response.includes.Asset.find(a => a.sys.id === logoId) : null;
+  if (asset?.fields?.file?.url) {
+    logoUrl = 'https:' + asset.fields.file.url;
+  }
+}
+---
 <nav class="fixed top-0 left-0 w-full bg-white border-gray-200 py-2.5 dark:bg-gray-700 z-50 shadow-md">
   <div class="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Logo and Title -->
     <a href="/" class="flex items-center">
-      <img src="testlogo2.png" class="h-16 sm:h-20 mr-3" alt="ThreeKingsJudo Logo" />
+      <img src={logoUrl} class="h-16 sm:h-20 mr-3" alt="ThreeKingsJudo Logo" />
       <span class="text-lg sm:text-xl font-kosugi font-semibold text-black whitespace-nowrap dark:text-gray-400"></span>
     </a>
 

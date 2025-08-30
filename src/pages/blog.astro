@@ -1,0 +1,22 @@
+---
+// src/pages/blog.astro
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+
+const files = fs.readdirSync('./src/content/blog');
+const posts = files.map((file) => {
+  const content = fs.readFileSync(`./src/content/blog/${file}`, 'utf8');
+  const { data } = matter(content);
+  return data;
+});
+---
+
+<ul class="grid md:grid-cols-2 gap-4">
+  {posts.map(post => (
+    <li class="bg-white p-4 shadow rounded-xl">
+      <h2 class="text-xl font-semibold">{post.title}</h2>
+      <p class="text-sm text-gray-500">{post.date}</p>
+    </li>
+  ))}
+</ul>
