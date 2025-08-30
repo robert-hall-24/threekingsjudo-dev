@@ -1,0 +1,22 @@
+local_backend: true
+
+backend:
+  name: git-gateway
+  branch: main
+
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "About Page"
+        name: "about"
+        file: "src/content/pages/about.json"
+        fields:
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+          - { label: "Button Text", name: "buttonText", widget: "string" }
+          - { label: "Image", name: "image", widget: "image" }
