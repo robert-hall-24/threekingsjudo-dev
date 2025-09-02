@@ -46,3 +46,23 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+
+## Running Decap CMS Locally
+
+To set up Decap CMS locally, follow these steps:
+
+### Step 1: Start the Local Development Server
+
+Run the following commands to start your local server:
+
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm run dev`             | Starts the local development server at `http://localhost:4321` |
+| `npm run cms`             | Runs the local server for Decap CMS (configured in the `package.json` scripts) |
+
+### Step 2: Access the Admin Portal
+
+Once the server is running, visit the following link to access the Decap CMS admin portal:
+
+[http://localhost:4321/admin/index.html#/](http://localhost:4321/admin/index.html#/)
