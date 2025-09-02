@@ -20,3 +20,12 @@ collections:
           - { label: "Body", name: "body", widget: "markdown" }
           - { label: "Button Text", name: "buttonText", widget: "string" }
           - { label: "Image", name: "image", widget: "image" }
+
+      - label: "About Hero Section"
+        name: "abouthero"
+        file: "src/content/pages/abouthero.json"
+        fields:
+          - { name: "title", label: "Heading", widget: "string" }
+          - { name: "background", label: "Background Image", widget: "image" }
+          
+  
